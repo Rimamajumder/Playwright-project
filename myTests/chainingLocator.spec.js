@@ -1,5 +1,6 @@
 import {test, expect, Browser, Page, BroweserContext} from '@playwright/test'
 import {webkit, chromium, firefox} from 'playwright'
+import {JSHandle} from 'playwright'
 
 test('Chaining locator test', async()=>{
    
@@ -22,5 +23,5 @@ test('Chaining locator test', async()=>{
     //approach 3
      await page.locator('form#Form_getForm_Name').getByRole('button',{name: 'Get Your Free Trail'}).click();
 
-
+     await elementHandle.dispatchEvent('click')
 });

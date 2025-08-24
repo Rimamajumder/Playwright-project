@@ -12,6 +12,7 @@ test('Chaining locator test', async()=>{
     const countryDropdown = 'select#Contact_CountryCode';
 
     await page.selectOption(countryDropdown, {value: 'AD'});
+    // await page.selectOption(page.locator('select#Contact_CountryCode'), {value: 'AD'});
     await page.selectOption(countryDropdown, {label: 'Australia'});
     await page.selectOption(countryDropdown, {index: 10});
 
@@ -27,6 +28,8 @@ test('Chaining locator test', async()=>{
             }
             
     }
+
+    page.on('dialog',dialog=> dialog.expect())
 
 
 
